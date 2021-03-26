@@ -79,7 +79,7 @@ class Smadshop
   
   # получаем ссылки из файла
   def get_links_from_file
-    file = File.read('./Smadshop_sub_links.txt') 
+    file = File.read('./results/Smadshop_sub_links.txt') 
     sublinks = JSON.parse(file)
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
@@ -101,7 +101,7 @@ class Smadshop
       parse_products_same_category__info(pagination_links,categorys_name)
  
       params = {"Smadshop": @final_info} 
-      File.open("Smadshop_rezult.txt", "w") do |info|
+      File.open("./results/Smadshop_rezult.txt", "w") do |info|
         info.write(JSON.pretty_generate(params))
         end
       end

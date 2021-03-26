@@ -30,7 +30,7 @@ module Check_module
     end
     
     s = @sub_links.flatten.compact
-    File.open("Smadshop_sub_links.txt", "w") do |info|
+    File.open("./results/Smadshop_sub_links.txt", "w") do |info|
       info.write(JSON.pretty_generate(s))
       end
     #  рекурсия
