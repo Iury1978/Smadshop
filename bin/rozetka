@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '/home/iuri/Ruby/Smadshop/Smadshop/lib/rozetka.rb'
+require_relative '../lib/rozetka.rb'
 
 Rozetka.new.parse_pagination

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '/home/iuri/Ruby/Smadshop/Smadshop/lib/smadshop.rb'
+require_relative '../lib/smadshop.rb'
 
 Smadshop.new.start
