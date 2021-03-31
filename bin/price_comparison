@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative 'price_comparison.rb'
+require_relative '/home/iuri/Ruby/Smadshop/Smadshop/lib/price_comparison.rb'
 
 PriceComparison.new.comparison

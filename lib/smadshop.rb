@@ -246,4 +246,4 @@ def checking(value)
 
 end
 
-Smadshop.new.start
+# Smadshop.new.start

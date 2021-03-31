@@ -81,4 +81,4 @@ class Rozetka
 
 end
 
-Rozetka.new.parse_pagination
+# Rozetka.new.parse_pagination
