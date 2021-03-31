@@ -1,0 +1,77 @@
+{
+  "Smadshop": [
+    {
+      "Велосипеды": [
+        {
+          "name": "Велосипед Crosser Jazz 29 19\" Shimano+Hydr (Black/Orange)",
+          "price": 4739.0,
+          "description": null
+        }
+      ]
+    },
+    {
+      "Мобильные телефоны": [
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/128GB (Awesome Black)",
+          "price": 5427.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 SM-A725F 8GB/256GB (Awesome Black)",
+          "price": 9057.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 SM-A725F 6GB/128GB (Awesome Blue)",
+          "price": 8205.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 SM-A525F 4GB/128GB (Awesome Violet)",
+          "price": 6793.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/64GB (Awesome White)",
+          "price": 5125.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/64GB (Awesome Black)",
+          "price": 5125.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 7i Duos 4GB/64GB (Silver)",
+          "price": 3518.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 7i Duos 4GB/64GB (Blue)",
+          "price": 3518.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme X3 Dual 12GB/256GB (Blue)",
+          "price": 8815.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi Note 9 Duos 3GB/64GB (Black)",
+          "price": 3689.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Apple iPhone 11 4GB/64GB (Red)",
+          "price": 14491.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9С Duos 3/64GB (Orange)",
+          "price": 3039.0,
+          "description": null
+        }
+      ]
+    }
+  ]
+}

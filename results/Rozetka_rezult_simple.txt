@@ -1,0 +1,53 @@
+{
+  "Rozetka": [
+    {
+      "Мобильные телефоны": [
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/128GB (Awesome Black)",
+          "price": 5417.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 SM-A725F 8GB/256GB (Awesome Black)",
+          "price": 9056.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 SM-A725F 6GB/128GB (Awesome Blue)",
+          "price": 8204.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 SM-A525F 4GB/128GB (Awesome Violet)",
+          "price": 6893.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/64GB (Awesome White)",
+          "price": 5025.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/64GB (Awesome Black)",
+          "price": 5127.0,
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/128GB Phantom White (SM-G991BZWDSEK)",
+          "price": "20166",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno POP 4 2/32GB Dawn Blue",
+          "price": "1717",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno POP 4 2/32GB Ice Lake Green",
+          "price": "1717",
+          "description": null
+        }
+      ]
+    }
+  ]
+}
