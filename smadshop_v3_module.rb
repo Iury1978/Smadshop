@@ -10,7 +10,7 @@ require 'nokogiri'
 require 'open-uri'
 # require_relative 'category'
 require_relative 'check_module'
-require_relative 'namepricedescription'
+require_relative 'product'
 
 class Smadshop
   include Check_module
@@ -95,7 +95,7 @@ class Smadshop
       number_of_pages = pagination_info.css("[class= 'results']").text.split(' ')[-2].to_i
       # устанавливаю  1,чтобы не крутил  все страницы каждого товара,хаватит и первой для наглядности
       # но проверил, все  ссылки отлично создаются и работают
-      number_of_pages = 1
+      number_of_pages = 3
       pagination_links = Array.new(number_of_pages) {|i| sublink + '?page=' + (i+1).to_s}
 
       parse_products_same_category__info(pagination_links,categorys_name)
@@ -195,7 +195,7 @@ class Smadshop
       price:  price,
       description: description
     }
-    NamePriceDescription.new(parameters)
+    Product.new(parameters)
     # w = NamePrice.new(parameters)
     # puts JSON.pretty_generate(w)
     # puts '-----------'

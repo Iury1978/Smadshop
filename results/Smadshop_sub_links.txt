@@ -1,8 +1,4 @@
 [
   "https://smadshop.md/velosipedy/",
-  "https://smadshop.md/mebel-kupit-cena-nedorogo/chehly-dlya-mebeli-kupit-ceny/",
-  "https://smadshop.md/tovary-dlya-doma/dveri-kupit-mezhkomnatnye-vhodnye/",
-  "https://smadshop.md/telefony/mobilnye-telefony-kupit-ceny-magazin/",
-  "https://smadshop.md/telefony/stacionarnye-telefony-kupit-cena/",
-  "https://smadshop.md/muzykalnye-instrumenty-oborudovanie-kupit/stojki-shtativy-pyupitry-kupit/"
+  "https://smadshop.md/telefony/mobilnye-telefony-kupit-ceny-magazin/"
 ]

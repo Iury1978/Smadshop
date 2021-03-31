@@ -10,7 +10,7 @@ require 'nokogiri'
 require 'open-uri'
 # require_relative 'category'
 require_relative 'check_module'
-require_relative 'namepricedescription'
+require_relative 'product'
 
 class Smadshop
   include Check_module
@@ -123,7 +123,7 @@ class Smadshop
       name:   name,
       price:  price      
     }
-    NamePriceDescription.new(parameters)
+    Product.new(parameters)
     # w = NamePrice.new(parameters)
     # puts JSON.pretty_generate(w)
     # puts '-----------'

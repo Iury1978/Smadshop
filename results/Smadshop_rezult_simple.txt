@@ -18,7 +18,7 @@
         },
         {
           "name": "Мобильный телефон Samsung Galaxy A72 SM-A725F 8GB/256GB (Awesome Black)",
-          "price": 9057.0,
+          "price": 5417.0,
           "description": null
         },
         {
@@ -38,7 +38,7 @@
         },
         {
           "name": "Мобильный телефон Samsung Galaxy A32 SM-A325F 4GB/64GB (Awesome Black)",
-          "price": 5125.0,
+          "price": 5417.0,
           "description": null
         },
         {

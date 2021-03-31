@@ -1,4 +1,4 @@
-class NamePriceDescription
+class Product
 
   attr_accessor :name, :price, :description
 
