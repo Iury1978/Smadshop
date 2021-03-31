@@ -8,12 +8,9 @@ require 'json'
 require 'watir'
 require 'nokogiri'
 require 'open-uri'
-# require_relative 'category'
-require_relative 'check_module'
-require_relative 'product'
+require_relative 'lib/product.rb'
 
 class Smadshop
-  include Check_module
   attr_accessor :browser
 
   def initialize
@@ -79,7 +76,7 @@ class Smadshop
   
   # получаем ссылки из файла
   def get_links_from_file
-    file = File.read('./results/Smadshop_sub_links.txt') 
+    file = File.read('./data/Smadshop_sub_links.txt') 
     sublinks = JSON.parse(file)
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
@@ -101,7 +98,7 @@ class Smadshop
       parse_products_same_category__info(pagination_links,categorys_name)
  
       params = {"Smadshop": @final_info} 
-      File.open("./results/Smadshop_rezult.txt", "w") do |info|
+      File.open("./data/Smadshop_rezult.txt", "w") do |info|
         info.write(JSON.pretty_generate(params))
         end
       end
@@ -209,6 +206,42 @@ class Smadshop
     html =  browser.div(id: 'content').html
     categorys_name_info = Nokogiri::HTML.parse(html)
     categorys_name = categorys_name_info.css('h1').text
+  end
+
+def checking(value)
+    @sub_links_not_ready = []
+    sublinks = value.map do |sublink|
+      browser.goto(sublink)
+      #  прверяем на нужном ли мы уровне
+      check_level = (browser.div id: 'listing_options').exists?
+      #  проверяем, есть ли такой товар в наличии,  если его нет - есть строка class='content' В этой категории нет товаров.
+      html_check_empty =  browser.div(id: 'content').html
+      check = Nokogiri::HTML.parse(html_check_empty)
+      check_empty = check.css("[class='content']").text.match?(/В этой категории нет товаров./)
+       #  проверка на наличие такого товара . пример - https://smadshop.md/klimaticheskaya-tehnika/kaminnye-topki/
+       # его мы просто пропускаем и идем на следующую ссылку
+        if check_empty == true
+          next
+        elsif check_level == false
+          # продолжаем получать линки субкатегорий'
+          html =  browser.div(class: 'category-modlist').html
+          sublinks_info = Nokogiri::HTML.parse(html)
+          # для каждой категории получаем список субкатегорий 
+          sublinks = sublinks_info.css('a[href]').map do |element|             
+            element['href']
+            end  
+          @sub_links_not_ready << sublinks
+          # sublinks.flatten
+        elsif check_level == true
+          @sub_links << sublink          
+        end
+    end    
+    s = @sub_links.flatten.compact
+    File.open("./data/Smadshop_sub_links.txt", "w") do |info|
+      info.write(JSON.pretty_generate(s))
+      end
+    #  рекурсия
+    checking(@sub_links_not_ready.flatten.compact) if @sub_links_not_ready.flatten.compact.size != 0
   end
 
 end

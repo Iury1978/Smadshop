@@ -2,7 +2,7 @@ require 'json'
 require 'watir'
 require 'nokogiri'
 require 'open-uri'
-require_relative 'product'
+require_relative 'lib/product.rb'
 
 class Rozetka
   attr_reader :browser
@@ -24,7 +24,7 @@ class Rozetka
       pagination_links = Array.new(number_of_pages) {|i| link + 'page='  + (i+1).to_s + '/'}
       parse_products_same_category__info(pagination_links,categorys_name) 
       params = {"Rozetka": @final_info} 
-      File.open("./results/Rozetka_rezult.txt", "w") do |info|
+      File.open("./data/Rozetka_rezult.txt", "w") do |info|
         info.write(JSON.pretty_generate(params))
         end      
   end
