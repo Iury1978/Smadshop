@@ -76,7 +76,7 @@ class Smadshop
   
   # получаем ссылки из файла
   def get_links_from_file
-    file = File.read('./data/Smadshop_sub_links.txt') 
+    file = File.read('/home/iuri/Ruby/Smadshop/Smadshop/Smadshop_sub_links.txt') 
     sublinks = JSON.parse(file)
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
@@ -98,7 +98,7 @@ class Smadshop
       parse_products_same_category__info(pagination_links,categorys_name)
  
       params = {"Smadshop": @final_info} 
-      File.open("./data/Smadshop_rezult.txt", "w") do |info|
+      File.open("/home/iuri/Ruby/Smadshop/Smadshop/data/Smadshop_rezult.txt", "w") do |info|
         info.write(JSON.pretty_generate(params))
         end
       end
@@ -237,7 +237,7 @@ def checking(value)
         end
     end    
     s = @sub_links.flatten.compact
-    File.open("./data/Smadshop_sub_links.txt", "w") do |info|
+    File.open("/home/iuri/Ruby/Smadshop/Smadshop/data/Smadshop_sub_links.txt", "w") do |info|
       info.write(JSON.pretty_generate(s))
       end
     #  рекурсия

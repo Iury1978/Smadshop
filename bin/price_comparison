@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative 'price_comparison.rb'
+
+PriceComparison.new.comparison

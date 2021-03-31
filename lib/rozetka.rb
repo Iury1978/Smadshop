@@ -2,7 +2,7 @@ require 'json'
 require 'watir'
 require 'nokogiri'
 require 'open-uri'
-require_relative 'lib/product.rb'
+require_relative '/home/iuri/Ruby/Smadshop/Smadshop/lib/product.rb'
 
 class Rozetka
   attr_reader :browser
@@ -24,7 +24,7 @@ class Rozetka
       pagination_links = Array.new(number_of_pages) {|i| link + 'page='  + (i+1).to_s + '/'}
       parse_products_same_category__info(pagination_links,categorys_name) 
       params = {"Rozetka": @final_info} 
-      File.open("./data/Rozetka_rezult.txt", "w") do |info|
+      File.open("/home/iuri/Ruby/Smadshop/Smadshop/data/Rozetka_rezult.txt", "w") do |info|
         info.write(JSON.pretty_generate(params))
         end      
   end
@@ -65,9 +65,7 @@ class Rozetka
    
   def parse_name_price_description(product_info_name, product_info_price)  
     name = product_info_name.css('h1').text.strip
-    puts name
     price = product_info_price.css("[id='price_label']").text.delete(" ")
-    puts price
     parameters = {
       name:   name,
       price:  price      
