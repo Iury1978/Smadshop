@@ -14,7 +14,7 @@ require_relative 'product'
 
 class Smadshop
   include Check_module
-  attr_accessor :browser
+  attr_reader :browser
 
   def initialize
     @browser = Watir::Browser.new :chrome
