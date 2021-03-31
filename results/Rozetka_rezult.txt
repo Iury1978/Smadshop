@@ -1,0 +1,998 @@
+{
+  "Rozetka": [
+    {
+      "Мобильные телефоны": [
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 8/256GB Black",
+          "price": "8962",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 8/256GB Lavender",
+          "price": "8962",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 4/128GB Black",
+          "price": "5600",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 4/128GB Lavender",
+          "price": "5600",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/128GB Phantom White (SM-G991BZWDSEK)",
+          "price": "20166",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/128GB Phantom Pink (SM-G991BZIDSEK)",
+          "price": "20166",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/128GB Phantom Violet (SM-G991BZVDSEK)",
+          "price": "20166",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/128GB Phantom Grey (SM-G991BZADSEK)",
+          "price": "20166",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S10 Plus 8/128GB Ceramic Black (SM-G975FCKDSEK)",
+          "price": "12696",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S10 Plus 8/128GB Ceramic White (SM-G975FCWDSEK)",
+          "price": "12696",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A02s 3/32GB Black (SM-A025FZKESEK)",
+          "price": "2687",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A02s 3/32GB White (SM-A025FZWESEK)",
+          "price": "2687",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A02s 3/32GB Blue (SM-A025FZBESEK)",
+          "price": "2687",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 6/128GB Black",
+          "price": "9708",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 6/128GB White",
+          "price": "9708",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 6/128GB Blue",
+          "price": "9708",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 6/128GB Lavender",
+          "price": "9708",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 5.4 4/64GB Polar Night",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A12 3/32GB Black (SM-A125FZKUSEK)",
+          "price": "3210",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A12 3/32GB Blue (SM-A125FZBUSEK)",
+          "price": "3210",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A12 3/32GB Red (SM-A125FZRUSEK)",
+          "price": "3210",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A11 2/32GB Black (SM-A115FZKNSEK)",
+          "price": "3210",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A11 2/32GB Red (SM-A115FZRNSEK)",
+          "price": "3210",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 4/128GB Black",
+          "price": "7468",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 4/128GB White",
+          "price": "7468",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 4/128GB Blue",
+          "price": "7468",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A52 4/128GB Lavender",
+          "price": "7468",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9T 4/128 Carbon Gray (749702)",
+          "price": "4107",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9T 4/128 Twilight Blue (749703)",
+          "price": "4107",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9T 4/128 Ocean Green (749704)",
+          "price": "0",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Motorola G9 Power 4/128 Metallic Sage (PALR0020RS)",
+          "price": "3882",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 7 Pro 8/128GB Mirror Blue",
+          "price": "6721",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 7 Pro 8/128GB Mirror Silver",
+          "price": "6721",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A31 4/64GB Prism Crush Black (SM-A315FZKUSEK)",
+          "price": "4480",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A31 4/64GB Prism Crush Blue (SM-A315FZBUSEK)",
+          "price": "4480",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A31 4/64GB Prism Crush Red (SM-A315FZRUSEK)",
+          "price": "4480",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 8/256GB Black",
+          "price": "11202",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A72 8/256GB Lavender",
+          "price": "11202",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Poco M3 4/128GB Black (726255)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Poco M3 4/128GB Blue (726256)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Poco M3 4/128GB Yellow (726257)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Ultra 12/256GB Phantom Black (SM-G998BZKGSEK)",
+          "price": "29876",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Ultra 12/256GB Phantom Silver (SM-G998BZSGSEK)",
+          "price": "29876",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Motorola E7 Plus 4/64GB Blue (PAKX0008RS)",
+          "price": "2808",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9C 3/64GB Twilight Blue (660926)",
+          "price": "2614",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9C 3/64GB Midnight Gray (660925)",
+          "price": "2614",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A71 6/128GB Black (SM-A715FZKUSEK)",
+          "price": "8962",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A71 6/128GB Metallic Silver (SM-A715FMSUSEK)",
+          "price": "8962",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A71 6/128GB Blue (SM-A715FZBUSEK)",
+          "price": "8962",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон OPPO A15 2/32GB Dynamic Black",
+          "price": "2762",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон OPPO A15 2/32GB Mystery Blue",
+          "price": "2762",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 2.4 2/32GB Charcoal",
+          "price": "2240",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 2.4 2/32GB Fjord",
+          "price": "2240",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 6 8/128GB White",
+          "price": "5003",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Motorola E6s 4/64GB Meteor Grey (PAJE0031RS)",
+          "price": "2240",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Vivo Y31 4/128GB Racing Black",
+          "price": "4853",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Vivo Y31 4/128GB Ocean Blue",
+          "price": "4853",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A12 4/64GB Black (SM-A125FZKVSEK)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A12 4/64GB Red (SM-A125FZRVSEK)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A12 4/64GB Blue (SM-A125FZBVSEK)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 4/64GB Black",
+          "price": "5077",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 4/64GB White",
+          "price": "5077",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 4/64GB Blue",
+          "price": "5077",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A32 4/64GB Lavender",
+          "price": "5077",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 6i 4/128GB White",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9 3/32GB Carbon Grey (657892)",
+          "price": "2987",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9 3/32GB Sunset Purple (657893)",
+          "price": "2987",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9 3/32GB Ocean Green (657894)",
+          "price": "2987",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/256GB Phantom White (SM-G991BZWGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/256GB Phantom Pink (SM-G991BZIGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/256GB Phantom Violet (SM-G991BZVGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 8/256GB Phantom Grey (SM-G991BZAGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9 4/64GB Sunset Purple (657896)",
+          "price": "3285",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9 4/64GB Carbon Grey (657895)",
+          "price": "3285",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy Note 20 Ultra 8/256GB Black (SM-N985FZKGSEK)",
+          "price": "26888",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy Note 20 Ultra 8/256GB Bronze (SM-N985FZNGSEK)",
+          "price": "26888",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy Note 20 Ultra 8/256GB White (SM-N985FZWGSEK)",
+          "price": "26888",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi Note 9 3/64GB Onyx Black (683902)",
+          "price": "3584",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi Note 9 3/64GB Midnight Grey",
+          "price": "3584",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi Note 9 3/64GB Forest Green",
+          "price": "3584",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S20 Ultra 12/128GB Cosmic Black (SM-G988BZKDSEK)",
+          "price": "22407",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S20 Ultra 12/128GB Cosmic Gray (SM-G988BZADSEK)",
+          "price": "22407",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 3.4 3/64GB Dusk",
+          "price": "2614",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-treme PQ36 Black-Orange",
+          "price": "3567",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-treme PQ36 Black",
+          "price": "3567",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9T 4/64 Ocean Green (749700)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Xiaomi Redmi 9T 4/64 Carbon Gray (749698)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S20 Plus 8/128GB Cosmic Black (SM-G985FZKDSEK)",
+          "price": "18672",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S20 Plus 8/128GB Cosmic Gray (SM-G985FZADSEK)",
+          "price": "18672",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S20 Plus 8/128GB Aura Red (SM-G985FZRDSEK)",
+          "price": "18672",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Plus 8/128GB Phantom Black (SM-G996BZKDSEK)",
+          "price": "23900",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Plus 8/128GB Phantom Silver (SM-G996BZSDSEK)",
+          "price": "23900",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Plus 8/128GB Phantom Violet (SM-G996BZVDSEK)",
+          "price": "23900",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Plus 8/256GB Phantom Black (SM-G996BZKGSEK)",
+          "price": "25394",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Plus 8/256GB Phantom Violet (SM-G996BZVGSEK)",
+          "price": "25394",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Plus 8/256GB Phantom Silver (SM-G996BZSGSEK)",
+          "price": "25394",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1203 Single Sim 2019 Black",
+          "price": "410",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1203 Single Sim 2019 Pink",
+          "price": "372",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1203 Single Sim 2019 Blue",
+          "price": "410",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A51 6/128GB Blue (SM-A515FZBWSEK)",
+          "price": "6721",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон OPPO A52 64GB Black",
+          "price": "4480",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1203 Single Sim 2019 Black Slim Box (без зарядного устройства)",
+          "price": "315",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy Note 20 8/256GB Bronze (SM-N980FZNGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy Note 20 8/256GB Green (SM-N980FZGGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy Note 20 8/256GB Gray (SM-N980FZAGSEK)",
+          "price": "21660",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview A80 Pro 4/64GB Black",
+          "price": "2837",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 150 TA-1235 DualSim Black (16GMNB01A16)",
+          "price": "895",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 150 TA-1235 DualSim Cyan (16GMNE01A04)",
+          "price": "847",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 150 TA-1235 DualSim Red (16GMNR01A02)",
+          "price": "895",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 8000 DS 4G Black (16LIOB01A18)",
+          "price": "1888",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview A60 1/16GB Black (Украинская версия)",
+          "price": "1567",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview A60 1/16GB Blue (Украинская версия)",
+          "price": "1567",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A31 4/128GB Prism Crush Black (SM-A315FZKVSEK)",
+          "price": "5600",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A31 4/128GB Prism Crush Blue (SM-A315FZBVSEK)",
+          "price": "5600",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 106 Dual Sim 2018 Grey",
+          "price": "447",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон ZTE Blade L8 1/16GB Black",
+          "price": "1120",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S10 8/128 GB Green (SM-G973FZGDSEK)",
+          "price": "11949",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 800 Tough Black",
+          "price": "2464",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 800 Desert Sand",
+          "price": "2464",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 5310 DualSim Black/Red",
+          "price": "1044",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 5310 DualSim White/Red",
+          "price": "1044",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 230 Dual Sim Dark Silver/Black",
+          "price": "1492",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 230 Dual Sim Blue",
+          "price": "1492",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 110 Black",
+          "price": "521",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 110 Pink",
+          "price": "521",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 110 Ocean Blue",
+          "price": "521",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 2720 Flip Black",
+          "price": "1804",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 2720 Flip Red",
+          "price": "1941",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-style 18 Track Black-Green (4827798854433)",
+          "price": "248",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-style 18 Track Black-Grey (4827798854419)",
+          "price": "248",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-style 18 Track Black-Red (4827798854426)",
+          "price": "248",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-style 18 Track Black (4827798854440)",
+          "price": "248",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Ultra 12/128GB Phantom Black (SM-G998BZKDSEK)",
+          "price": "28382",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Ultra 12/128GB Phantom Silver (SM-G998BZSDSEK)",
+          "price": "28382",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Ultra 16/512GB Phantom Black (SM-G998BZKHSEK)",
+          "price": "0",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy S21 Ultra 16/512GB Phantom Silver (SM-G998BZSHSEK)",
+          "price": "32864",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-treme PQ38 Black (8000 mAh)",
+          "price": "3733",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1174 Dual Sim 2019 Black",
+          "price": "447",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1174 Dual Sim 2019 Pink",
+          "price": "424",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 105 TA-1174 Dual Sim 2019 Blue",
+          "price": "447",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Ulefone Armor X6 2/16GB Black",
+          "price": "2164",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Ulefone Armor X6 2/16GB Black-Orange",
+          "price": "2164",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон 2E T180 2020 DualSim Black (680576170064)",
+          "price": "334",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 125 TA-1253 DualSim Black (16GMNB01A17)",
+          "price": "745",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 125 TA-1253 DualSim White (16GMNW01A01)",
+          "price": "745",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 125 TA-1253 DualSim Blue",
+          "price": "745",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Vivo X50 8/128 GB Glaze Black",
+          "price": "11949",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Vivo X50 8/128 GB Frost Blue",
+          "price": "11949",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno T474 Black",
+          "price": "470",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno T474 Champagne Gold",
+          "price": "470",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno T474 Blue",
+          "price": "470",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno T454 Champagne Gold",
+          "price": "410",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno T454 Blue",
+          "price": "410",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-treme PQ20 Black",
+          "price": "1907",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-treme PQ20 Black-Orange",
+          "price": "1907",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Motorola RAZR 2019 XT200-2 Blush Gold",
+          "price": "27635",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 150 Dual Sim White",
+          "price": "821",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile X-treme PT68 Black",
+          "price": "1194",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Maxcom MM814 Black",
+          "price": "521",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Maxcom MM814 White",
+          "price": "504",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Maxcom MM814 Green",
+          "price": "521",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 210 Dual Sim Black (16OTRB01A02)",
+          "price": "895",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 210 Dual Sim Red (16OTRR01A01)",
+          "price": "895",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Nokia 210 Dual Sim Gray (16OTRD01A03)",
+          "price": "840",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Astro A169 Black/Gray",
+          "price": "298",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Astro A167 Black",
+          "price": "447",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Glofiish GPad U Black",
+          "price": "1751",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Rezone A281 Force Black",
+          "price": "447",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile Comfort 50 HIT2020 Black",
+          "price": "355",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile Comfort 50 HIT2020 Green",
+          "price": "355",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile Comfort 50 HIT2020 Orange",
+          "price": "355",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview BV5900 Black (Украинская версия)",
+          "price": "3360",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview BV5900 Black/Orange (Украинская версия)",
+          "price": "3360",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон ZTE Blade A3 2020 1/32GB Dark Grey",
+          "price": "1492",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон ZTE Blade A3 2020 1/32GB Blue",
+          "price": "1492",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон ZTE Blade A3 2020 1/32GB Red",
+          "price": "1492",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Astro A241 Red (1682)",
+          "price": "394",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 6i 3/64GB White",
+          "price": "3434",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Realme 6i 3/64GB Green",
+          "price": "3434",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A01 Core 1/16GB Black (SM-A013FZKDSEK)",
+          "price": "1791",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A01 Core 1/16GB Blue (SM-A013FZBDSEK)",
+          "price": "1791",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Samsung Galaxy A01 Core 1/16GB Red (SM-A013FZRDSEK)",
+          "price": "1791",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон 2E E280 2018 DualSim Black",
+          "price": "394",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Philips E255 Xenium Black",
+          "price": "1044",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Philips E255 Xenium Blue",
+          "price": "1044",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview BV6800 Pro 4/64GB Black-Yellow (Украинская версия)",
+          "price": "5526",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Astro A171 Black",
+          "price": "201",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Prestigio Wize J1 Black (PFP1184DUOBLACK)",
+          "price": "222",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Prestigio Muze H1 Black (PFP1246DUOBLACK)",
+          "price": "268",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview A60 Pro 3/16GB Black (Украинская версия)",
+          "price": "2240",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Blackview A60 Pro 3/16GB Blue (Украинская версия)",
+          "price": "2240",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Philips E182 Xenium Blue",
+          "price": "1008",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон OPPO A72 128GB Black",
+          "price": "5184",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон OPPO A72 128GB Purple",
+          "price": "5227",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile Comfort 50 Elegance3 Black (1600mAh) SIMO Assistant",
+          "price": "597",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Sigma mobile Comfort 50 Elegance3 Red (1600 mAh) SIMO Assistant",
+          "price": "597",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno POP 4 2/32GB Dawn Blue",
+          "price": "1717",
+          "description": null
+        },
+        {
+          "name": "Мобильный телефон Tecno POP 4 2/32GB Ice Lake Green",
+          "price": "1717",
+          "description": null
+        }
+      ]
+    }
+  ]
+}
