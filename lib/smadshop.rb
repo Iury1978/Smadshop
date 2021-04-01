@@ -8,10 +8,9 @@ require 'json'
 require 'watir'
 require 'nokogiri'
 require 'open-uri'
-require_relative 'lib/product.rb'
+require_relative '../lib/product.rb'
 
 class Smadshop
-  attr_accessor :browser
 
   def initialize
     @browser = Watir::Browser.new :chrome
@@ -31,12 +30,12 @@ class Smadshop
   end
  
   def goto_page
-    browser.goto('https://smadshop.md/')
-    browser.window.maximize
+    @browser.goto('https://smadshop.md/')
+    @browser.window.maximize
   end
 
   def get_links   
-    html =  browser.ul(class: 'box-category').html
+    html =  @browser.ul(class: 'box-category').html
     links_info = Nokogiri::HTML.parse(html)  
     #  беру ссылки только где  style, они ведут на общую категорию
     links = links_info.css('a[style]').map do |link|
@@ -76,17 +75,17 @@ class Smadshop
   
   # получаем ссылки из файла
   def get_links_from_file
-    file = File.read('/home/iuri/Ruby/Smadshop/Smadshop/Smadshop_sub_links.txt') 
+    file = File.read('../data/Smadshop_sub_links.txt') 
     sublinks = JSON.parse(file)
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
   def parse_pagination
     links = get_links_from_file
     links.map do |sublink|
-      browser.goto(sublink)
+      @browser.goto(sublink)
       #  делаю отображение товара "Картинки"
-      browser.element(id: 'a_view_grid').wait_until(&:present?).click
-      html =  browser.div(class: 'pagination').html
+      @browser.element(id: 'a_view_grid').wait_until(&:present?).click
+      html =  @browser.div(class: 'pagination').html
       pagination_info = Nokogiri::HTML.parse(html)
       #  количество страниц берем отсюда <div class="results">Показано с 1 по 21 из 364 (всего 18 страниц)</div>
       number_of_pages = pagination_info.css("[class= 'results']").text.split(' ')[-2].to_i
@@ -98,7 +97,7 @@ class Smadshop
       parse_products_same_category__info(pagination_links,categorys_name)
  
       params = {"Smadshop": @final_info} 
-      File.open("/home/iuri/Ruby/Smadshop/Smadshop/data/Smadshop_rezult.txt", "w") do |info|
+      File.open("../data/Smadshop_rezult.txt", "w") do |info|
         info.write(JSON.pretty_generate(params))
         end
       end
@@ -108,9 +107,9 @@ class Smadshop
     @all_products_category = []   
     #   sublinks_last_level - последний уровень ссылок, по которым уже хранится вся инфа о товаре (описание ,название и цена)
     sublinks_last_level = pagination.map do |page|
-      # browser.link(href: /#{page}/).wait_until(&:present?).click
-      browser.goto(page)
-      html =  browser.div(class: 'product-grid').html
+      # @browser.link(href: /#{page}/).wait_until(&:present?).click
+      @browser.goto(page)
+      html =  @browser.div(class: 'product-grid').html
       sublinks_last_level_info = Nokogiri::HTML.parse(html)     
       sublinks_last_level_info.css('a[href]').map do |element|
         element['href']
@@ -118,8 +117,8 @@ class Smadshop
       end
     sublinks_last_level.flatten!.uniq!  
     sublinks_last_level.map do |info_page|
-      browser.goto(info_page)
-      html =  browser.div(class: 'product-info').html
+      @browser.goto(info_page)
+      html =  @browser.div(class: 'product-info').html
       product_info = Nokogiri::HTML.parse(html)
       #  собираем в массив все запарсенные товары категории( к примеру, все товары типа 'велосипеды')
       @all_products_category << parse_name_price_description(product_info) 
@@ -145,7 +144,7 @@ class Smadshop
     # есть 4 типа описания товара(данные специально записаны по разному)
     # поэтому делаю проверку по размеру массива данных   и по наличию класса product_specs_info
     des = {}
-    check_class = (browser.div class: 'product_specs_info').exists?
+    check_class = (@browser.div class: 'product_specs_info').exists?
     description = product_info.css("[class = 'row'], [class = 'row odd']").map do |info|
       #  удаляю и разбиваю , данные в таком формате   "\n" + "Тип:  \n" + "двухколесный "
       info.text.tr("\n", "").strip.split(': ')
@@ -156,7 +155,7 @@ class Smadshop
     #  пример https://smadshop.md/telefony/telefon-panasonic-kx-ts2350uaw.html
     elsif 
       if check_class == true
-        html = browser.div(class: 'product_specs_info').html
+        html = @browser.div(class: 'product_specs_info').html
         doc = Nokogiri::HTML(html)
         string = doc.css('div').text
         description = string.slice(string.index("\n")..-1).strip.split("\n").map do |element| 
@@ -164,7 +163,7 @@ class Smadshop
           end
         des = Hash[description]
       elsif
-        html = browser.div(itemprop: "description").html
+        html = @browser.div(itemprop: "description").html
         check = Nokogiri::HTML(html)
         description = check.css('div').map do |info|
           info.text.strip.split(': ')
@@ -175,7 +174,7 @@ class Smadshop
           des = Hash[description]
         # пример https://smadshop.md/telefony/telefon-panasonic-kx-ts2350uaj.html
         else
-          html = browser.div(itemprop: "description").html
+          html = @browser.div(itemprop: "description").html
           check = Nokogiri::HTML(html)
           string = check.css('p').text
           description = string.strip.split("\n").map do |element| 
@@ -203,7 +202,7 @@ class Smadshop
   end
   #  метод, создающий общее имя категории
   def categorys_name
-    html =  browser.div(id: 'content').html
+    html =  @browser.div(id: 'content').html
     categorys_name_info = Nokogiri::HTML.parse(html)
     categorys_name = categorys_name_info.css('h1').text
   end
@@ -211,11 +210,11 @@ class Smadshop
 def checking(value)
     @sub_links_not_ready = []
     sublinks = value.map do |sublink|
-      browser.goto(sublink)
+      @browser.goto(sublink)
       #  прверяем на нужном ли мы уровне
-      check_level = (browser.div id: 'listing_options').exists?
+      check_level = (@browser.div id: 'listing_options').exists?
       #  проверяем, есть ли такой товар в наличии,  если его нет - есть строка class='content' В этой категории нет товаров.
-      html_check_empty =  browser.div(id: 'content').html
+      html_check_empty =  @browser.div(id: 'content').html
       check = Nokogiri::HTML.parse(html_check_empty)
       check_empty = check.css("[class='content']").text.match?(/В этой категории нет товаров./)
        #  проверка на наличие такого товара . пример - https://smadshop.md/klimaticheskaya-tehnika/kaminnye-topki/
@@ -224,7 +223,7 @@ def checking(value)
           next
         elsif check_level == false
           # продолжаем получать линки субкатегорий'
-          html =  browser.div(class: 'category-modlist').html
+          html =  @browser.div(class: 'category-modlist').html
           sublinks_info = Nokogiri::HTML.parse(html)
           # для каждой категории получаем список субкатегорий 
           sublinks = sublinks_info.css('a[href]').map do |element|             
@@ -237,7 +236,7 @@ def checking(value)
         end
     end    
     s = @sub_links.flatten.compact
-    File.open("/home/iuri/Ruby/Smadshop/Smadshop/data/Smadshop_sub_links.txt", "w") do |info|
+    File.open("../data/Smadshop_sub_links.txt", "w") do |info|
       info.write(JSON.pretty_generate(s))
       end
     #  рекурсия
