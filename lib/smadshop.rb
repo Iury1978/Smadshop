@@ -9,11 +9,13 @@ require 'watir'
 require 'nokogiri'
 require 'open-uri'
 require_relative '../lib/product.rb'
+require "sqlite3"
 
 class Smadshop
 
   def initialize
     @browser = Watir::Browser.new :chrome
+    @db = SQLite3::Database.new "../data/smadshop.db"
     # массив всех ссылок последнего уровня, заполняется в модуле
     @sub_links = []
     # все конечные ссылки будут храниться в этом массиве
@@ -24,9 +26,16 @@ class Smadshop
     # отключил goto_page и get_links только записывают инфу в файл.
     # что бы не ждать  весь цикл получения ссылок их можно отключить и сразу обрабатывать записаныне
     #  в файле Smadshop_sub_links.txt наугад оставил пару ссылок для демонстрации работы
-    # goto_page
-    # get_links
-    parse_pagination
+    # create_db
+    goto_page
+    get_links
+    # parse_pagination
+  end
+
+  def create_db
+    @db = SQLite3::Database.new "../data/smadshop.db"
+    # сначала создаем только таблицу links, потом из нее будем читать даттые и создавать другие таблицы
+    db.execute "CREATE TABLE IF NOT EXISTS main.Links (Link_name TEXT)"
   end
  
   def goto_page
@@ -44,31 +53,6 @@ class Smadshop
     # убираю икею и услуги
     links.shift
     links.pop
-    # круговая(поуровневая) проверка до того момента, когда масссив необработанных полностью ссылок будет пустым
-    # структурно это так: главная категория(корневая) - нулевой уровень. получаем все ссылки, в которых могут быть и конечные ссылки,
-    # и ссылки, где есть подкатегории. Конечные ссылки записываем в отдельный массив и потом в файл, что бы часами опять не ждать
-    # их получение.
-    # И прогоняем это по кругу , пока массив подкатегорий не будет  пустым, то есть
-    # обработаем все подкатегории и получим из всех ссылки на категорию товара (пример - велосипеды, они сразу на нужномм уровне
-    # (без подкатегорий) и можно сразу их заносить в массив ссылок, готовых к обработке).
-    # максимальный уровень 4, но я сделал с запасом, на всякий случай, все равно выйдет из цикла раньше)
-    #  код оставил, что бы более понятно было каков механизм, а сделал через рекурсию в итоге
-    # loop do
-    #   step0 = links
-    #   break if step0.size == 0
-    #   step1 = checking(step0)
-    #   break if step1.size == 0
-    #   step2 = checking(step1)
-    #   break if step2.size == 0
-    #   step3 = checking(step2)
-    #   break if step3.size == 0
-    #   step4 = checking(step3)
-    #   break if step4.size == 0
-    #   step5 = checking(step4)
-    #   break if step5.size == 0
-    #   step6 = checking(step5)
-    #  break if step5.size == 0
-    # end
     checking(links)
   end
 
@@ -192,13 +176,7 @@ class Smadshop
       description: description
     }
     Product.new(parameters)
-    # w = NamePrice.new(parameters)
-    # puts JSON.pretty_generate(w)
-    # puts '-----------'
-     #  непонятный неуловимый пробел во втором элементе
-     # description.map do |element|
-     #  puts element[1].start_with?(" ") 
-     # end
+
   end
   #  метод, создающий общее имя категории
   def categorys_name
@@ -217,8 +195,8 @@ def checking(value)
       html_check_empty =  @browser.div(id: 'content').html
       check = Nokogiri::HTML.parse(html_check_empty)
       check_empty = check.css("[class='content']").text.match?(/В этой категории нет товаров./)
-       #  проверка на наличие такого товара . пример - https://smadshop.md/klimaticheskaya-tehnika/kaminnye-topki/
-       # его мы просто пропускаем и идем на следующую ссылку
+        #  проверка на наличие такого товара . пример - https://smadshop.md/klimaticheskaya-tehnika/kaminnye-topki/
+        # его мы просто пропускаем и идем на следующую ссылку
         if check_empty == true
           next
         elsif check_level == false
@@ -232,15 +210,32 @@ def checking(value)
           @sub_links_not_ready << sublinks
           # sublinks.flatten
         elsif check_level == true
-          @sub_links << sublink          
+          @sub_links << sublink  
+          # записываем каждую полученную ссылку непосредственно в БД smadshop.db в таблицу links
+          save_link_to_db(sublink)
+
         end
     end    
-    s = @sub_links.flatten.compact
-    File.open("../data/Smadshop_sub_links.txt", "w") do |info|
-      info.write(JSON.pretty_generate(s))
-      end
+    # s = @sub_links.flatten.compact
+    # File.open("../data/Smadshop_sub_links.txt", "w") do |info|
+    #   info.write(JSON.pretty_generate(s))
+    #   end
+
     #  рекурсия
     checking(@sub_links_not_ready.flatten.compact) if @sub_links_not_ready.flatten.compact.size != 0
+  end
+  # метод записи всех конечных ссылок на категории товаров в БД
+  def save_link_to_db(sublink)
+    # в таком виде выдает синтаксическую ошибку near "UNIQUE": syntax error (SQLite3::SQLException)
+    # так и не понял, что ему не нравится и написал по другому..
+    # @db.execute "CREATE TABLE IF NOT EXISTS main.Links (Link_name TEXT) UNIQUE(Link_name)"    
+    @db.execute <<-SQL
+    CREATE TABLE IF NOT EXISTS main.Links(
+    Link_name TEXT,
+    UNIQUE(Link_name)
+    );
+    SQL
+    @db.execute "INSERT OR IGNORE INTO Links ( Link_name ) VALUES ( '#{sublink}' )"
   end
 
 end
