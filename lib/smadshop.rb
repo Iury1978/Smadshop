@@ -26,10 +26,9 @@ class Smadshop
     # отключил goto_page и get_links только записывают инфу в файл.
     # что бы не ждать  весь цикл получения ссылок их можно отключить и сразу обрабатывать записаныне
     #  в файле Smadshop_sub_links.txt наугад оставил пару ссылок для демонстрации работы
-    # create_db
-    goto_page
-    get_links
-    # parse_pagination
+    # goto_page
+    # get_links
+    parse_pagination
   end
 
   def create_db
@@ -55,12 +54,17 @@ class Smadshop
     links.pop
     checking(links)
   end
-
-  
+ 
   # получаем ссылки из файла
   def get_links_from_file
     file = File.read('../data/Smadshop_sub_links.txt') 
     sublinks = JSON.parse(file)
+  end
+  
+  # получаем ссылки из базы данных
+  def get_links_from_db
+  links = @db.execute "SELECT * FROM main.Links"
+  links.flatten
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
   def parse_pagination
@@ -237,6 +241,7 @@ def checking(value)
     SQL
     @db.execute "INSERT OR IGNORE INTO Links ( Link_name ) VALUES ( '#{sublink}' )"
   end
+
 
 end
 
