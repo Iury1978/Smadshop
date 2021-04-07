@@ -16,16 +16,12 @@ class Smadshop
   def initialize
     @browser = Watir::Browser.new :chrome
     @db = SQLite3::Database.new "../data/smadshop.db"
-    # массив всех ссылок последнего уровня, заполняется в модуле
-    @sub_links = []
-    # все конечные ссылки будут храниться в этом массиве
-    @final_info = []
   end
 
   def start
     # отключил goto_page и get_links только записывают инфу в файл.
     # что бы не ждать  весь цикл получения ссылок их можно отключить и сразу обрабатывать записаныне
-    #  в файле Smadshop_sub_links.txt наугад оставил пару ссылок для демонстрации работы
+    #  в файле  БД smadshop.bd 
     # goto_page
     # get_links
     parse_pagination
@@ -33,8 +29,8 @@ class Smadshop
 
   def create_db
     @db = SQLite3::Database.new "../data/smadshop.db"
-    # сначала создаем только таблицу links, потом из нее будем читать даттые и создавать другие таблицы
-    db.execute "CREATE TABLE IF NOT EXISTS main.Links (Link_name TEXT)"
+    # сначала создаем только таблицу links, потом из нее будем читать данные и создавать другие таблицы
+    @db.execute "CREATE TABLE IF NOT EXISTS main.Links (Link_name TEXT)"
   end
  
   def goto_page
@@ -54,12 +50,6 @@ class Smadshop
     links.pop
     checking(links)
   end
- 
-  # получаем ссылки из файла
-  def get_links_from_file
-    file = File.read('../data/Smadshop_sub_links.txt') 
-    sublinks = JSON.parse(file)
-  end
   
   # получаем ссылки из базы данных
   def get_links_from_db
@@ -68,7 +58,7 @@ class Smadshop
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
   def parse_pagination
-    links = get_links_from_file
+    links = get_links_from_db
     links.map do |sublink|
       @browser.goto(sublink)
       #  делаю отображение товара "Картинки"
@@ -79,19 +69,15 @@ class Smadshop
       number_of_pages = pagination_info.css("[class= 'results']").text.split(' ')[-2].to_i
       # устанавливаю  1,чтобы не крутил  все страницы каждого товара,хаватит и первой для наглядности
       # но проверил, все  ссылки отлично создаются и работают
-      number_of_pages = 3
+      number_of_pages = 1
       pagination_links = Array.new(number_of_pages) {|i| sublink + '?page=' + (i+1).to_s}
 
       parse_products_same_category__info(pagination_links,categorys_name)
- 
-      params = {"Smadshop": @final_info} 
-      File.open("../data/Smadshop_rezult.txt", "w") do |info|
-        info.write(JSON.pretty_generate(params))
-        end
       end
   end
 
   def parse_products_same_category__info(pagination,categorys_name)
+    # массив всех товаров определенной категории
     @all_products_category = []   
     #   sublinks_last_level - последний уровень ссылок, по которым уже хранится вся инфа о товаре (описание ,название и цена)
     sublinks_last_level = pagination.map do |page|
@@ -109,18 +95,26 @@ class Smadshop
       html =  @browser.div(class: 'product-info').html
       product_info = Nokogiri::HTML.parse(html)
       #  собираем в массив все запарсенные товары категории( к примеру, все товары типа 'велосипеды')
-      @all_products_category << parse_name_price_description(product_info) 
+      @all_products_category << parse_name_price(product_info) 
+
       end
-      parameters = {"#{categorys_name}": @all_products_category}
-      # params = {'Smadshop': parameters}
-      @final_info << parameters
-      # тут могу выводить в разные файлы по категориям товара, если это надо
-      # File.open("#{categorys_name}.txt", "w") do |info|
-      #  info.write(JSON.pretty_generate(parameters))
-      #  end
+    @all_products_category.map do |a|
+      @db.execute <<-SQL
+      CREATE TABLE IF NOT EXISTS main.Чехлы_для_мебели(
+      Name TEXT,
+      Price REAL,
+      UNIQUE(Name)
+      );
+      SQL
+      # @db.execute "CREATE TABLE IF NOT EXISTS main.VVV (Name TEXT, Price REAL)"
+      @db.execute "INSERT OR IGNORE INTO Чехлы_для_мебели ( Name, Price ) VALUES (?, ?)", [a.name, a.price]
+      end
+
+      
+       abort
   end
    
-  def parse_name_price_description(product_info) 
+  def parse_name_price(product_info) 
     name = product_info.css('h1').text
     # проверяем есть ли товар или он закончился. Если закончился- ставим цену 0, к примеру, или можем написать , что товара нет
     check_product = product_info.css("[class='soldout_ttl']").text.match?(/Товар закончился/)
@@ -129,55 +123,10 @@ class Smadshop
     else
       price = 0
     end 
-    # есть 4 типа описания товара(данные специально записаны по разному)
-    # поэтому делаю проверку по размеру массива данных   и по наличию класса product_specs_info
-    des = {}
-    check_class = (@browser.div class: 'product_specs_info').exists?
-    description = product_info.css("[class = 'row'], [class = 'row odd']").map do |info|
-      #  удаляю и разбиваю , данные в таком формате   "\n" + "Тип:  \n" + "двухколесный "
-      info.text.tr("\n", "").strip.split(': ')
-      end
-    #  пример https://smadshop.md/telefony/panasonic-kx-ts2382uaw-white-telefon.html
-    if description.size != 0
-      des = Hash[description]
-    #  пример https://smadshop.md/telefony/telefon-panasonic-kx-ts2350uaw.html
-    elsif 
-      if check_class == true
-        html = @browser.div(class: 'product_specs_info').html
-        doc = Nokogiri::HTML(html)
-        string = doc.css('div').text
-        description = string.slice(string.index("\n")..-1).strip.split("\n").map do |element| 
-          element.split(": ")
-          end
-        des = Hash[description]
-      elsif
-        html = @browser.div(itemprop: "description").html
-        check = Nokogiri::HTML(html)
-        description = check.css('div').map do |info|
-          info.text.strip.split(': ')
-          end
-        # пример https://smadshop.md/telefony/telefon-panasonic-kx-ts2388uab.html
-        if description.size != 1  
-          description.shift
-          des = Hash[description]
-        # пример https://smadshop.md/telefony/telefon-panasonic-kx-ts2350uaj.html
-        else
-          html = @browser.div(itemprop: "description").html
-          check = Nokogiri::HTML(html)
-          string = check.css('p').text
-          description = string.strip.split("\n").map do |element| 
-            element.split(": ")
-            end
-          des = Hash[description]
-        end
-      end
-    end
-      
-    description = Array[des]
+
     parameters = {
       name:   name,
-      price:  price,
-      description: description
+      price:  price
     }
     Product.new(parameters)
 
@@ -217,15 +166,8 @@ def checking(value)
           @sub_links << sublink  
           # записываем каждую полученную ссылку непосредственно в БД smadshop.db в таблицу links
           save_link_to_db(sublink)
-
         end
     end    
-    # s = @sub_links.flatten.compact
-    # File.open("../data/Smadshop_sub_links.txt", "w") do |info|
-    #   info.write(JSON.pretty_generate(s))
-    #   end
-
-    #  рекурсия
     checking(@sub_links_not_ready.flatten.compact) if @sub_links_not_ready.flatten.compact.size != 0
   end
   # метод записи всех конечных ссылок на категории товаров в БД
