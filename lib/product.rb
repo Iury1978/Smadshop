@@ -1,18 +1,16 @@
 class Product
 
-  attr_accessor :name, :price, :description
+  attr_accessor :name, :price
 
   def initialize(parameters)
     @name = parameters[:name]
     @price = parameters[:price]
-    @description = parameters[:description]
   end
 
   def to_json(*a)
   	{
 	  name: @name,
-	  price: @price,
-	  description: @description
+	  price: @price
   	}.to_json(*a)
   end
 end

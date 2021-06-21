@@ -10,13 +10,13 @@ class PriceComparison
   end
 
   def smadshop
-    file = File.read('/home/iuri/Ruby/Smadshop/Smadshop/data/Smadshop_rezult_simple.txt') 
+    file = File.read('../data/Smadshop_rezult_simple.txt') 
     smadshop = JSON.parse(file)
     get_data(smadshop)  
   end
 
   def rozetka
-    file = File.read('/home/iuri/Ruby/Smadshop/Smadshop/data/Rozetka_rezult_simple.txt') 
+    file = File.read('../data/Rozetka_rezult_simple.txt') 
     rozetka = JSON.parse(file)
     get_data(rozetka) 
   end   
@@ -49,7 +49,7 @@ class PriceComparison
 
   def save_to_file(date_array)
   	todays_date = ("По состоянию на "  + Time.now.strftime("%d %B %Y %H %M") + "\n\r")
-    file = File.open("/home/iuri/Ruby/Smadshop/Smadshop/data/price_comparison.txt", "w")
+    file = File.open("../data/price_comparison.txt", "w")
     file.puts(todays_date)
 	for items in date_array do 
 	  file.puts(items)

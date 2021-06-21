@@ -24,7 +24,21 @@ class Smadshop
     #  в файле  БД smadshop.bd 
     # goto_page
     # get_links
-    parse_pagination
+    parse_pagination  def parse_accounts
+    get_accounts_id.map do |acc_id|
+      @browser.li(data_semantic_account_number: "#{acc_id}").wait_until(&:present?).click
+      html = @browser.div(data_semantic: "account").html
+      account_info = Nokogiri::HTML.parse(html)
+
+      @accounts << parse_account(account_info, acc_id)
+      end
+    full_accounts_information = { accounts: @accounts }
+    puts JSON.pretty_generate(full_accounts_information)
+    # File.new("bendigobank_result.txt", "w")
+    File.open("../data/bendigobank_result.txt", "w") do |info|
+      info.write(JSON.pretty_generate(full_accounts_information))
+    end
+  end
   end
 
   def create_db
@@ -58,6 +72,18 @@ class Smadshop
   end
   # парсим количество страниц каждой категории товара и создаем ссылки на каждую из них
   def parse_pagination
+    #  создаем таблицу Shops, пока с одим магазином
+    @db.execute <<-SQL
+      CREATE TABLE IF NOT EXISTS Shops (
+      shop_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      shop_name TEXT,
+      UNIQUE(shop_name)
+      );
+      SQL
+    @db.execute <<-SQL
+      INSERT OR IGNORE INTO Shops (shop_name)  VALUES ("smadshop") ;
+      SQL
+      
     links = get_links_from_db
     links.map do |sublink|
       @browser.goto(sublink)
@@ -96,22 +122,45 @@ class Smadshop
       product_info = Nokogiri::HTML.parse(html)
       #  собираем в массив все запарсенные товары категории( к примеру, все товары типа 'велосипеды')
       @all_products_category << parse_name_price(product_info) 
-
       end
-    @all_products_category.map do |a|
-      @db.execute <<-SQL
-      CREATE TABLE IF NOT EXISTS main.Чехлы_для_мебели(
-      Name TEXT,
-      Price REAL,
-      UNIQUE(Name)
+    
+    @db.execute <<-SQL
+      CREATE TABLE IF NOT EXISTS Category (
+      category_id INTEGER PRIMARY KEY AUTOINCREMENT,
+      category_name TEXT,
+      shop_id
+      UNIQUE(shop_name)
       );
       SQL
-      # @db.execute "CREATE TABLE IF NOT EXISTS main.VVV (Name TEXT, Price REAL)"
-      @db.execute "INSERT OR IGNORE INTO Чехлы_для_мебели ( Name, Price ) VALUES (?, ?)", [a.name, a.price]
-      end
+    @db.execute <<-SQL
+      INSERT OR IGNORE INTO Shops (shop_name)  VALUES ("smadshop") ;
+      SQL
 
+    # @db.execute <<-SQL
+    #   CREATE TABLE IF NOT EXISTS main.Category(
+    #   category_id INTEGER PRIMARY KEY   AUTOINCREMENT,
+    #   category_name TEXT,
+    #   shop_id INTEGER
+    #   );
+    #   SQL
+    #   # @db.execute "CREATE TABLE IF NOT EXISTS main.VVV (Name TEXT, Price REAL)"
+    #   @db.execute "INSERT OR IGNORE INTO Category ( category_name ) VALUES (?)", [categorys_name]
       
-       abort
+
+    # @all_products_category.map do |a|
+    #   @db.execute <<-SQL
+    #   CREATE TABLE IF NOT EXISTS main.Чехлы_для_мебели(
+    #   Name TEXT,
+    #   Price REAL,
+    #   UNIQUE(Name)
+    #   );
+    #   SQL
+    #   # @db.execute "CREATE TABLE IF NOT EXISTS main.VVV (Name TEXT, Price REAL)"
+    #   @db.execute "INSERT OR IGNORE INTO Чехлы_для_мебели ( Name, Price ) VALUES (?, ?)", [a.name, a.price]
+    #   end
+
+
+    #    abort
   end
    
   def parse_name_price(product_info) 
